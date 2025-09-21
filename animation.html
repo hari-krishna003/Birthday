@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday My Dear</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+      text-align: center;
+      padding-top: 50px;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #fff;
+      text-shadow: 0 0 15px rgba(255, 105, 180, 0.7);
+      animation: glow 3s ease-in-out infinite, bounce 2s infinite;
+      z-index: 2;
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 10px #ff6ec4, 0 0 20px #ff6ec4; }
+      50% { text-shadow: 0 0 20px #fcb045, 0 0 40px #fd1d1d; }
+      100% { text-shadow: 0 0 10px #ff6ec4, 0 0 20px #ff6ec4; }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .heart {
+      position: absolute;
+      color: red;
+      font-size: 20px;
+      animation: float 6s linear infinite;
+      opacity: 0.8;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    .photo {
+      margin-top: 20px;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      border: 5px solid white;
+      object-fit: cover;
+      box-shadow: 0 0 20px rgba(255, 192, 203, 0.8);
+      z-index: 2;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 1.3em;
+      color: white;
+      padding: 0 20px;
+      max-width: 600px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+      z-index: 2;
+    }
+
+    .video {
+      margin-top: 20px;
+      width: 90%;
+      max-width: 500px;
+      z-index: 2;
+      border: 3px solid #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 192, 203, 0.8);
+    }
+
+    
+  </style>
+</head>
+<body>
+
+  <!-- Main message -->
+  <h1>💖 Happy Birthday My Dear 💖</h1>
+
+  <!-- Photo (replace the src with your own image link or local image) -->
+  <img class="photo" src="Hari.jpg" alt=" ">
+
+
+  <!-- Personal message -->
+  <div class="message">
+    You are the light of my life and the reason behind my smile. 💫  
+    On this special day, I wish you endless happiness, laughter, and love.  
+    Happy Birthday, my love. You make every moment magical. 🎂💕
+  </div>
+
+  
+
+  <!-- Background music (optional) -->
+  <audio autoplay loop>
+    <source src="dandelions.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Floating hearts -->
+  <script>
+    const heartColors = ["#ff4d6d", "#ff85a1", "#ffc1cc", "#ff69b4", "#ff1493"];
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = "❤️";
+
+      const size = Math.random() * 20 + 20;
+      heart.style.fontSize = size + "px";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 2 + 4) + "s";
+      heart.style.color = heartColors[Math.floor(Math.random() * heartColors.length)];
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+
+    setInterval(createHeart, 250);
+  </script>
+
+</body>
+</html>
+
